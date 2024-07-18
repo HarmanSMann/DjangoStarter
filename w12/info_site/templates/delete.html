@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<main class="delete-movie layout">
+  <div class="container">
+    <div class="layout__box">
+      <h3>Confirm Delete Movie</h3>
+      <p>Are you sure you want to delete "{{ obj.name }}"?</p>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <button class="btn btn--main" type="submit">Confirm Delete</button>
+        <a class="btn btn--secondary" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
